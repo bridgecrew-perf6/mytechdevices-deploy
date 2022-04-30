@@ -50,3 +50,10 @@ if (process.env.NODE_ENV === "production") {
 //port
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log("listen to server running "));
+
+const proxy = require("http-proxy-middleware");
+
+module.exports = function (app) {
+  // add other server routes to path array
+  app.use(proxy(["/api"], { target: "http://localhost:5000" }));
+};
