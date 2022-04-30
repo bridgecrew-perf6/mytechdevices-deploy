@@ -24,7 +24,7 @@ mongoose
 // It simplifies the process of logging requests to your application. You might think of Morgan as a helper that generates request logs
 app.use(morgan("dev"));
 //helps communicate between front and back end, parse data under 2mb
-app.use(bodyParser.json({ limit: "2mb" }));
+app.use(bodyParser.json({ limit: "3mb" }));
 //overcome CORS error
 app.use(cors());
 
