@@ -48,5 +48,5 @@ if (process.env.NODE_ENV === "production") {
 }
 //3 APP LISTENS TO PORT
 //port
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => console.log("listen to server running "));
