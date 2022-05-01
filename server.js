@@ -32,12 +32,9 @@ app.use(bodyParser.json());
 //overcome CORS error
 app.use(cors());
 
-//routes MIDDLEWARE
-// app.use("/api", authRoutes);
-
 //this line below is for calling app.use for all the routes as the app starts, so we don;t have to call each route manually
 fs.readdirSync("./routes").map((r) =>
-  app.use(require(`./routes/${r}/${r}.route`))
+  app.use("/api", require(`./routes/${r}/${r}.route`))
 );
 
 app.use(express.static(path.join(__dirname, "build")));
